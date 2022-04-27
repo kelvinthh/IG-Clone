@@ -22,6 +22,11 @@ fun Top() {
         TopNavigationItem.Stories,
         TopNavigationItem.DirectMessage
     )
+//    val color: Color = if(MaterialTheme.colors.isLight) {
+//        Color.White
+//    } else {
+//        Color.Black
+//    }
     TopAppBar(backgroundColor = MaterialTheme.colors.background) {
         Row(
             modifier = Modifier

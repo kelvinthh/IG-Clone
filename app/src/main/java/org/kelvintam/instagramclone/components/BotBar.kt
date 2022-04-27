@@ -22,6 +22,11 @@ fun BotBar() {
         BotNavigationItem.Notifications,
         BotNavigationItem.Profile
     )
+//    val color: Color = if(MaterialTheme.colors.isLight) {
+//        Color.White
+//    } else {
+//        Color.Black
+//    }
     BottomNavigation(backgroundColor = MaterialTheme.colors.background) {
         items.forEach { item ->
             BottomNavigationItem(

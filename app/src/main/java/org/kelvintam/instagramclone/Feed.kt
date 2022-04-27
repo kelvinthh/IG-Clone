@@ -34,8 +34,7 @@ fun Feed() {
         ) {
             item { Stories() }
 
-            // Add 5 items
-            items(10) { index ->
+            items(100) { index ->
                 //Text(text = "Item: $index")
                 Posts()
             }
