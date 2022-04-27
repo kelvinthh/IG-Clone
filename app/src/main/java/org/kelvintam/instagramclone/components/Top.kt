@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.kelvintam.instagramclone.data.BotNavigationItem
 import org.kelvintam.instagramclone.data.TopNavigationItem
+
 @Composable
 fun Top() {
     val items = listOf(
@@ -23,14 +24,16 @@ fun Top() {
     )
     TopAppBar(backgroundColor = MaterialTheme.colors.background) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 5.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 5.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
             items.forEach { item ->
                 IconButton(
                     onClick = {},
-                    ) {
+                ) {
                     Icon(
                         painter = painterResource(id = item.icon),
                         contentDescription = item.title,

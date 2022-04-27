@@ -33,13 +33,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!",
-    color = Color.Red,
-    fontWeight = FontWeight.Bold)
-}
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
