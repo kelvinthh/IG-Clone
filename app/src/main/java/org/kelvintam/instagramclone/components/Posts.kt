@@ -28,7 +28,7 @@ import org.kelvintam.instagramclone.R
 
 // Main Post Body
 @Composable
-fun Posts() {
+fun Posts(index: Int) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -49,8 +49,9 @@ fun Posts() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Start
             ) {
+                val imageUrl: String = "https://picsum.photos/" + (100 + index)
                 AsyncImage(
-                    model = "https://picsum.photos/100",
+                    model = imageUrl,
                     contentDescription = "Person",
                     Modifier
                         .padding(10.dp)
@@ -75,16 +76,16 @@ fun Posts() {
         }
 
         // The main picture
-        val image = "https://picsum.photos/1600/1500"
-        SubcomposeAsyncImage(
+        val image = "https://picsum.photos/" + (1600 + index) + "/" + (1500 + index)
+        AsyncImage(
             model = image,
-            loading = {
-                CircularProgressIndicator(
-                    modifier = Modifier.fillMaxWidth(),
-                    color = MaterialTheme.colors.onBackground,
-                    50.dp
-                )
-            },
+//            loading = {
+//                CircularProgressIndicator(
+//                    modifier = Modifier.size(50.dp),
+//                    color = MaterialTheme.colors.onBackground,
+//
+//                )
+//            },
             contentDescription = "Test Image",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxWidth()
@@ -189,5 +190,5 @@ fun Menu() {
 @Preview(showBackground = true)
 @Composable
 fun PostsPreview() {
-    Posts()
+    Posts(1)
 }

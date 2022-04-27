@@ -36,16 +36,16 @@ fun Stories() {
     )
     {
         item {
-            StoryBox(username = "Your story", isSelf = true)
+            StoryBox(username = "Your story", isSelf = true, null)
         }
-        items(20) {
-            StoryBox(username = "User", isSelf = false)
+        items(20) {index ->
+            StoryBox(username = "User", isSelf = false, index)
         }
     }
 }
 
 @Composable
-fun StoryBox(username: String, isSelf: Boolean) {
+fun StoryBox(username: String, isSelf: Boolean, index: Int?) {
     Column(
         modifier = Modifier
             .padding(horizontal = 5.dp, vertical = 5.dp)
@@ -59,9 +59,9 @@ fun StoryBox(username: String, isSelf: Boolean) {
         )
         Box() {
             val imageUrl: String = if (isSelf) {
-                "https://picsum.photos/150"
+                "https://picsum.photos/201"
             } else {
-                "https://picsum.photos/100"
+                "https://picsum.photos/" + (100 + index!!)
             }
             AsyncImage(
                 model = imageUrl,
