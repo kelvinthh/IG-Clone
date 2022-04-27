@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.kelvintam.instagramclone.components.BotBar
+import org.kelvintam.instagramclone.components.Posts
 import org.kelvintam.instagramclone.components.Stories
 import org.kelvintam.instagramclone.components.Top
 import org.kelvintam.instagramclone.data.TopNavigationItem
@@ -31,11 +32,12 @@ fun Feed() {
             verticalArrangement = Arrangement.Center
 
         ) {
-            item{ Stories()}
+            item { Stories() }
 
             // Add 5 items
-            items(100) { index ->
-                Text(text = "Item: $index")
+            items(10) { index ->
+                //Text(text = "Item: $index")
+                Posts()
             }
 
             // Add another single item
